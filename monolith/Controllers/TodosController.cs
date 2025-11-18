@@ -42,10 +42,12 @@ public class TodosController : ControllerBase
                     return NotFound(new { message = "Todo not found" });
                 }
                 
+                // For other non-success status codes, return them directly without retrying
                 return StatusCode((int)response.StatusCode, new { message = "Error retrieving todo" });
             }
             catch (HttpRequestException e)
             {
+                // Only retry on network/connection errors (HttpRequestException)
                 if (attempt == maxRetries - 1)
                 {
                     return StatusCode(
@@ -65,6 +67,13 @@ public class TodosController : ControllerBase
                         new { message = "Retry interrupted" }
                     );
                 }
+            }
+            catch (TaskCanceledException)
+            {
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    new { message = "Request cancelled" }
+                );
             }
         }
         
