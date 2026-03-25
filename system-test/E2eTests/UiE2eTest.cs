@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace Optivem.AtddAccelerator.Template.SystemTest.E2eTests
+namespace Optivem.Greeter.SystemTest.E2eTests
 {
     public class UiE2eTest
     {
@@ -9,7 +9,7 @@ namespace Optivem.AtddAccelerator.Template.SystemTest.E2eTests
         {
             // DISCLAIMER: This is an example of a badly written test
             // which unfortunately simulates real-life software test projects.
-            // This is the starting point for our ATDD Accelerator exercises.
+            // This is the starting point for our Greeter exercises.
 
             using var playwright = await Playwright.CreateAsync();
             await using var browser = await playwright.Chromium.LaunchAsync();

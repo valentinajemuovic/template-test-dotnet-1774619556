@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Optivem.AtddAccelerator.Template.Monolith": {
+    "Optivem.Greeter.Monolith": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

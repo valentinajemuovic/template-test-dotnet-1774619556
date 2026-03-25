@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Optivem.AtddAccelerator.Template.Monolith.Controllers;
+namespace Optivem.Greeter.Monolith.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
