@@ -9,6 +9,6 @@ public class EchoController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        return Ok("Hello from API!");
+        return Ok("Hello from API - OK!");
     }
 }
